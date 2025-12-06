@@ -1,0 +1,97 @@
+@layer components {
+    .gold-gradient {
+        @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light;
+    }
+
+    .elegant-shadow {
+        box-shadow: 0 4px 30px rgba(212, 175, 55, 0.1);
+    }
+
+    .section-title {
+        @apply text-heading-3 md:text-heading-2 font-bold mb-6 relative;
+    }
+
+    .section-title::after {
+        content: "";
+        @apply absolute bottom-0 left-0 h-1 w-16 gold-gradient;
+    }
+
+    [dir="rtl"] .section-title::after {
+        @apply right-0 left-auto;
+    }
+
+    .container-custom {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .image-container {
+        @apply overflow-hidden rounded-lg;
+    }
+
+    .image-container img {
+        @apply w-full h-full object-cover transition-transform duration-500 hover:scale-105;
+    }
+
+    .content-card {
+        @apply soft-ui-card hover:shadow-soft-lg transition-all duration-300;
+    }
+
+    .hover-lift {
+        @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+    }
+
+    .hover-glow {
+        @apply transition-all duration-300;
+    }
+
+    .hover-glow:hover {
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    }
+}
+
+
+/* تحسينات الظهور التدريجي للعناصر */
+/* apper element  */
+
+.fade-in-element {
+    @apply opacity-0 transition-all duration-1000 ease-out;
+}
+
+.fade-in-element.visible {
+    @apply opacity-100;
+}
+
+/* تأثيرات ظهور العناصر أثناء التمرير */
+/* scorlling fade reveal  */
+
+.reveal-on-scroll {
+    @apply opacity-0 transform transition-all duration-700;
+}
+
+.reveal-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+}
+
+.reveal-on-scroll-up {
+    @apply opacity-0 transform translate-y-10 transition-all duration-700 ease-out;
+}
+
+.reveal-on-scroll-up.visible {
+    @apply opacity-100 translate-y-0;
+}
+
+.reveal-on-scroll-right {
+    @apply opacity-0 transform -translate-x-10 transition-all duration-700 ease-out;
+}
+
+.reveal-on-scroll-right.visible {
+    @apply opacity-100 translate-x-0;
+}
+
+.reveal-on-scroll-left {
+    @apply opacity-0 transform translate-x-10 transition-all duration-700 ease-out;
+}
+
+.reveal-on-scroll-left.visible {
+    @apply opacity-100 translate-x-0;
+}
